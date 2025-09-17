@@ -1,0 +1,26 @@
+. Implement the class ShortestPathProblem so that given a startLocation and endTag, we can find the
+minimum cost path corresponding to the shortest path from startLocation to any location that has the
+endTag. Specifically, you need to implement,
+• startState() which returns an object of type State containing the location of the starting state.
+The memory argument can be kept as None for this problem.
+• isEnd(state) which returns a boolean indicating whether state has the endTag.
+• successorsAndCosts(state) which returns a list of tuples of the form:
+(successorLocation: str, successorState: State, cost: float).
+
+I would recommend to start by getting familiar with the whole code. Make sure to go over the class
+State in util.py and the class CityMap in mapUtil.py as they will be needed in this part.
+Recall the separation between search problem (modeling) and search algorithm (inference). You
+should focus on modeling, i.e., defining the ShortestPathProblem. The default search algorithm,
+UniformCostSearch (UCS), is implemented for you in util.py.
+2. Run python mapUtil.py > readableSanJoseMap.txt to write a file of the possible locations on the San
+Jose map along with their tags. Each tag is a [key]=[value]. Here are some examples of keys:
+• landmark: Hand-defined landmarks (from data/sanjose-landmarks.json)
+• amenity: Various amenity types (e.g., "park", "food")
+• parking: Assorted parking options (e.g., "underground")
+Choose a starting location and end tag, perhaps that’s relevant to your daily life, and implement
+getSanJoseShortestPathProblem() to create a search problem. Then, run python grader.py 1b-custom
+to generate path.json. Once generated, run python visualization.py to visualize it. It will open in your
+browser. Include an image of the path you obtained in your submission.
+You can add new landmarks by following the instructions in the README.md to use your own map
+and landmarks.
+4
